@@ -5,17 +5,16 @@
         </div> -->
 
     <app-navbar></app-navbar>
-
     <app-aside></app-aside>
 
-    <router-outlet></router-outlet>
+    <div class="content-wrapper">
+        <app-title-page></app-title-page>
+        <!-- /.control-sidebar -->    
+        <router-outlet></router-outlet>
+    </div>  
 
-    <!-- <app-footer></app-footer> -->
+    <app-footer></app-footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+    
 </div>
 <!-- ./wrapper -->

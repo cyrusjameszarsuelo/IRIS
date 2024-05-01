@@ -2,11 +2,12 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ELEMENT_DATA, PeriodicElement } from './periodic-element';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule],
+  imports: [MatTableModule, MatPaginatorModule, RouterLink],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css',
 })

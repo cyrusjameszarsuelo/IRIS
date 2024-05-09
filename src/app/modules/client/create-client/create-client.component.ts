@@ -49,19 +49,22 @@ export class CreateClientComponent implements OnInit {
     this.fetchSources().subscribe((sources) => {
       this.sources = sources.map((source) => source.name);
 
-      this.filteredOptions = this.myControl.valueChanges.pipe(
-        startWith(''),
-        map((value) => this._filter(value || ''))
-      );
-
+      this.filterOptions(this.sources);
     });
   }
 
-  private _filter(value: string): string[] {
+  private filterOptions(dropdownValues: any) {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value || '', dropdownValues))
+    );
+  }
+
+  private _filter(value: string, dropdownValues): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.sources.filter((source) =>
-      source.toLowerCase().includes(filterValue)
+    return dropdownValues.filter((response) =>
+      response.toLowerCase().includes(filterValue)
     );
   }
 

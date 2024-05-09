@@ -9,6 +9,7 @@ import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ErrorStateMatcher, provideNativeDateAdapter } from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment.development';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -73,7 +74,7 @@ export class CreateClientComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   fetchSources() {
-    return this.http.get<Sources[]>('http://127.0.0.1:8000/api/sources')
+    return this.http.get<Sources[]>(environment.apiUrl + '/sources')
   }
 }
 

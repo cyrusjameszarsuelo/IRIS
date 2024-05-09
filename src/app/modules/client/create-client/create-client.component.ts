@@ -5,8 +5,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable, startWith } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ErrorStateMatcher, provideNativeDateAdapter } from '@angular/material/core';
+import { HttpClient } from '@angular/common/http';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -27,32 +29,59 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     ReactiveFormsModule,
     AsyncPipe,
     MatDatepickerModule
+    
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './create-client.component.html',
   styleUrl: './create-client.component.css',
 })
 export class CreateClientComponent implements OnInit {
+
+  constructor(private http: HttpClient) {}
+
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
+  filteredOptions: Observable<any[]>;
+  sources: string[] = [];
 
   ngOnInit() {
+
+    this.fetchSources().subscribe((sources) => {
+      this.sources = sources.map((source) => source.name);
+
+      this.filterOptions(this.sources);
+    });
+  }
+
+  private filterOptions(dropdownValues: any) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value || ''))
+      map((value) => this._filter(value || '', dropdownValues))
     );
   }
 
-  private _filter(value: string): string[] {
+  private _filter(value: string, dropdownValues): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter((option) =>
-      option.toLowerCase().includes(filterValue)
+    return dropdownValues.filter((response) =>
+      response.toLowerCase().includes(filterValue)
     );
   }
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
+
+  fetchSources() {
+    return this.http.get<Sources[]>('http://127.0.0.1:8000/api/sources')
+  }
 }
+
+export interface Sources {
+  name: string;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at: Date;
+  id?: number;
+}
+

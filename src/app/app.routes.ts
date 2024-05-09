@@ -4,6 +4,7 @@ import { ClientComponent } from './modules/client/client.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { CreateClientComponent } from './modules/client/create-client/create-client.component';
 import { JobsComponent } from './modules/jobs/jobs.component';
+import { CreateJobsComponent } from './modules/jobs/create-jobs/create-jobs.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     // ]},
     {path: 'clients', component: ClientComponent},
     {path: 'create-client', component: CreateClientComponent},
-    {path: 'jobs', component: JobsComponent}
+    {path: 'jobs', component: JobsComponent},
+    {path: 'create-jobs', component: CreateJobsComponent}
 ];

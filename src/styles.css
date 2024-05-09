@@ -2,3 +2,51 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.content {padding:0 1rem;}
+.btn-main {
+    background: #024459 !important;
+    color: #fff !important;
+    padding: 10px 15px !important;
+}
+.btn-main:hover {
+    background-color: #007bff !important;
+}
+/* CARD */
+.card-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 0px;
+    background: #024459 !important;
+}
+
+.card-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.card-footer {
+    padding-top:25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.form-buttons button {
+    margin:0px 10px;
+    padding:25px;
+}
+
+/* END CARD */
+
+/* TABLE */
+thead {
+    background: #024459 !important;
+}
+
+thead tr th {
+    color: #fff !important;
+    font-size: 16px;
+}
+
+th.mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition {
+    color: #fff !important;
+}

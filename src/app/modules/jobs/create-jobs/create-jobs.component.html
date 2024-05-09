@@ -1,0 +1,179 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Job Details</h3>
+                                    </div>
+                                    <form>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <mat-form-field>
+                                                        <mat-label >Reference</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Cleint</mat-label>
+                                                        <input type="text" placeholder="Pick one" aria-label="Number"
+                                                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                            @for (option of filteredOptions | async; track option) {
+                                                            <mat-option [value]="option">{{option}}</mat-option>
+                                                            }
+                                                        </mat-autocomplete>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label>Contact</mat-label>
+                                                        <mat-select>
+                                                            @for (food of foods; track food) {
+                                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                                            }
+                                                        </mat-select>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label>Job Title</mat-label>
+                                                        <mat-select>
+                                                            @for (food of foods; track food) {
+                                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                                            }
+                                                        </mat-select>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Job Description</mat-label>
+                                                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Keywords</mat-label>
+                                                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Experience</mat-label>
+                                                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Qualifications</mat-label>
+                                                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label >Salary</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+                                                    
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Benefits</mat-label>
+                                                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label >Fee</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <mat-form-field>
+                                                        <mat-label >Address</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Region</mat-label>
+                                                        <input type="text" placeholder="Pick one" aria-label="Number"
+                                                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                            @for (option of filteredOptions | async; track option) {
+                                                            <mat-option [value]="option">{{option}}</mat-option>
+                                                            }
+                                                        </mat-autocomplete>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Province</mat-label>
+                                                        <input type="text" placeholder="Pick one" aria-label="Number"
+                                                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                            @for (option of filteredOptions | async; track option) {
+                                                            <mat-option [value]="option">{{option}}</mat-option>
+                                                            }
+                                                        </mat-autocomplete>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>City</mat-label>
+                                                        <input type="text" placeholder="Pick one" aria-label="Number"
+                                                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                            @for (option of filteredOptions | async; track option) {
+                                                            <mat-option [value]="option">{{option}}</mat-option>
+                                                            }
+                                                        </mat-autocomplete>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Barangay</mat-label>
+                                                        <input type="text" placeholder="Pick one" aria-label="Number"
+                                                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                            @for (option of filteredOptions | async; track option) {
+                                                            <mat-option [value]="option">{{option}}</mat-option>
+                                                            }
+                                                        </mat-autocomplete>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label >Zip Code</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label>Vacany Type</mat-label>
+                                                        <mat-select>
+                                                            @for (food of foods; track food) {
+                                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                                            }
+                                                        </mat-select>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label>Job Status</mat-label>
+                                                        <mat-select>
+                                                            @for (food of foods; track food) {
+                                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                                            }
+                                                        </mat-select>
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                        <mat-label >Positions Available</mat-label>
+                                                        <input matInput>
+                                                    </mat-form-field>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="card-footer form-buttons">
+                                            <button mat-flat-button color="warn">Cancel</button>
+                                            <button mat-flat-button color="primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

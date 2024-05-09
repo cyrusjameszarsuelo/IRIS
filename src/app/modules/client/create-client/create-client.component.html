@@ -6,34 +6,265 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="card-header">
-                                    <h3 class="card-title">Client Details</h3>
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Client Details</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Source</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Company Name</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>T/A</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Nature of Business</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Specialist Area</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Industry</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Address</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Country</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Region</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Province</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>City</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Barangay</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Zip Code</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <mat-form-field>
+                                                    <mat-label>Telephone Number</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Alternate Telephone Number</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Email</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Website</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Terms Sent</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Term Sent Date:</mat-label>
+                                                    <input matInput [matDatepicker]="picker">
+                                                    <mat-hint>MM/DD/YYYY</mat-hint>
+                                                    <mat-datepicker-toggle matIconSuffix
+                                                        [for]="picker"></mat-datepicker-toggle>
+                                                    <mat-datepicker #picker></mat-datepicker>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Terms Received</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Term Received Date</mat-label>
+                                                    <input matInput [matDatepicker]="picker2">
+                                                    <mat-hint>MM/DD/YYYY</mat-hint>
+                                                    <mat-datepicker-toggle matIconSuffix
+                                                        [for]="picker2"></mat-datepicker-toggle>
+                                                    <mat-datepicker #picker2></mat-datepicker>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
+                            </div>
 
-                                            <mat-form-field class="example-full-width">
-                                                <mat-label>Number</mat-label>
-                                                <input type="text" placeholder="Pick one" aria-label="Number" matInput
-                                                    [formControl]="myControl" [matAutocomplete]="auto">
-                                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                                    @for (option of filteredOptions | async; track option) {
-                                                    <mat-option [value]="option">{{option}}</mat-option>
+                            <div class="col-md-12">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Client Details</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Salutation</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>First Name</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Last Name</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Position</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Decision Maker</mat-label>
+                                                    <input type="text" placeholder="Pick one" aria-label="Number"
+                                                        matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                                        @for (option of filteredOptions | async; track option) {
+                                                        <mat-option [value]="option">{{option}}</mat-option>
+                                                        }
+                                                    </mat-autocomplete>
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <mat-form-field>
+                                                    <mat-label>Direct Dial</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Mobile Number</mat-label>
+                                                    <input matInput>
+                                                </mat-form-field>
+
+                                                <mat-form-field>
+                                                    <mat-label>Email</mat-label>
+                                                    <input type="email" matInput [formControl]="emailFormControl"
+                                                        [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com">
+                                                    <!-- <mat-hint>Enter your email address</mat-hint> -->
+                                                    @if (emailFormControl.hasError('email') &&
+                                                    !emailFormControl.hasError('required')) {
+                                                    <mat-error>Please enter a valid email address</mat-error>
                                                     }
-                                                </mat-autocomplete>
-                                            </mat-form-field>
-                                            
+                                                    @if (emailFormControl.hasError('required')) {
+                                                    <mat-error>Email is <strong>required</strong></mat-error>
+                                                    }
+                                                </mat-form-field>
 
-                                            <mat-form-field>
-                                                <mat-label>Input</mat-label>
-                                                <input matInput>
-                                            </mat-form-field>
-
-                                            <mat-form-field>
-                                                <mat-label>Input</mat-label>
-                                                <input matInput>
-                                            </mat-form-field>
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Notes</mat-label>
+                                                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                                                </mat-form-field>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

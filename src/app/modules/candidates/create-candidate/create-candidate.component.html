@@ -1,0 +1,387 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Client Details</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <mat-form-field>
+                          <mat-label>Source</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Name</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Name"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="nameList"
+                          />
+                          <mat-autocomplete #nameList="matAutocomplete">
+                            @for (name of names; track name) {
+                            <mat-option [value]="name">{{ name }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Candidate Status</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Status"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="Status"
+                          />
+                          <mat-autocomplete #Status="matAutocomplete">
+                            @for (status of candidateStatus; track status) {
+                            <mat-option [value]="status">{{
+                              status
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Nickname</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Date of Birth</mat-label>
+                          <input matInput [matDatepicker]="picker2" />
+                          <mat-hint>MM/DD/YYYY</mat-hint>
+                          <mat-datepicker-toggle
+                            matIconSuffix
+                            [for]="picker2"
+                          ></mat-datepicker-toggle>
+                          <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Gender</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Status"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="forGender"
+                          />
+                          <mat-autocomplete #forGender="matAutocomplete">
+                            @for (gender of gender; track gender) {
+                            <mat-option [value]="gender">{{
+                              gender
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Alternate Email</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Telephone No.</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Mobile No.</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field>
+                          <mat-label> Alternate Mobile No.</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+                        <mat-form-field>
+                          <mat-label>Nationality</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Country</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Status"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="forGender"
+                          />
+                          <mat-autocomplete #forGender="matAutocomplete">
+                            @for (gender of gender; track gender) {
+                            <mat-option [value]="gender">{{
+                              gender
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Address</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+                        <mat-form-field>
+                          <mat-label>Region</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Province</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>City</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Barangay</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Zipcode</mat-label>
+                          <input matInput placeholder="label" value="" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Professional Information</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <mat-form-field>
+                          <mat-label>Education</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Position 1</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Position 2</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Position 3</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Location 1</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Location 2</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Preferred Location 3</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field>
+                          <mat-label>Current Salary</mat-label>
+                          <input matInput />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Minumum Salary Sought</mat-label>
+                          <input matInput />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Notice Required</mat-label>
+                          <input matInput />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Employment Status</mat-label>
+                          <input
+                            type="text"
+                            placeholder="Select Source"
+                            aria-label="text"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="sourceList"
+                          />
+                          <mat-autocomplete #sourceList="matAutocomplete">
+                            @for (source of sources; track source) {
+                            <mat-option [value]="source">{{
+                              source
+                            }}</mat-option>
+                            }
+                          </mat-autocomplete>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Candidate CV</mat-label>
+                          <input matInput type="text" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Raw CV</mat-label>
+                          <input matInput type="text" />
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>Admin CV</mat-label>
+                          <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                          <input matInput (change)="onFileSelected($event)" #fileInput type="text"  />
+                          <span class="file-name">{{selectedFile?.name}}</span>
+                        </mat-form-field>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

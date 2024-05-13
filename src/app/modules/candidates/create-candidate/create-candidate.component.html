@@ -356,23 +356,41 @@
                           </mat-autocomplete>
                         </mat-form-field>
 
-                        <mat-form-field>
-                          <mat-label>Candidate CV</mat-label>
-                          <input matInput type="text" />
-                        </mat-form-field>
+                        <mat-form-field class="columns">
+                          <mat-label >Candidate CV</mat-label>
+                          <ng-template #newFile>
+                              <mat-label>Choose file</mat-label>
+                          </ng-template>
+                          <input matInput  >
+                          <button mat-icon-button matSuffix (click)="fileInput.click()">
+                              <mat-icon>attach_file</mat-icon>
+                          </button>
+                          <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+                      </mat-form-field>
 
-                        <mat-form-field>
-                          <mat-label>Raw CV</mat-label>
-                          <input matInput type="text" />
-                        </mat-form-field>
+                        <mat-form-field class="columns">
+                          <mat-label >Raw CV</mat-label>
+                          <ng-template #newFile>
+                              <mat-label>Choose file</mat-label>
+                          </ng-template>
+                          <input matInput value="{{fileName}}" >
+                          <button mat-icon-button matSuffix (click)="fileInput.click()">
+                              <mat-icon>attach_file</mat-icon>
+                          </button>
+                          <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+                      </mat-form-field>
 
-                        <mat-form-field>
-                          <mat-label>Admin CV</mat-label>
-                          <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-                          <input matInput (change)="onFileSelected($event)" #fileInput type="text"  />
-                          <span class="file-name">{{selectedFile?.name}}</span>
-                        </mat-form-field>
-
+                        <mat-form-field class="columns">
+                          <mat-label >Admin CV</mat-label>
+                          <!-- <ng-template #newFile>
+                              <mat-label>Choose file</mat-label>
+                          </ng-template> -->
+                          <input matInput  value="{{fileName}}" >
+                          <button mat-icon-button matSuffix (click)="fileInput.click()">
+                              <mat-icon>attach_file</mat-icon>
+                          </button>
+                          <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+                      </mat-form-field>
                       </div>
                     </div>
                   </div>

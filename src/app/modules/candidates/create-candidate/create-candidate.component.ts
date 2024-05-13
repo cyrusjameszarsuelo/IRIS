@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import {
   FormsModule,
   FormGroupDirective,
@@ -24,7 +25,8 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatIconModule,
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './create-candidate.component.html',
@@ -42,9 +44,12 @@ export class CreateCandidateComponent {
   gender: string[] = ['Male', 'Female'];
 
   selectedFile: any = null;
+  fileName: string ;
 
-onFileSelected(event: any): void {
+  onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0] ?? null;
-
-}
+    this.fileName = event.target.files[0].name;
+    console.log(this.fileName)
+    
+  }
 }
